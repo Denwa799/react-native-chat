@@ -1,9 +1,13 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { AppNavigation } from './navigation';
+import { Providers } from 'shared/providers';
+import { AppTheme } from './AppTheme';
 
 function App() {
-  return <AppNavigation />;
+  return (
+    <Providers>
+      <AppTheme />
+    </Providers>
+  );
 }
 
 export default App;

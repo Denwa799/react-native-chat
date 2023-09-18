@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { MainScreen } from 'screens/main';
-import { ProfileScreen } from 'screens/profile';
+import { CallScreen } from 'screens/call';
 
 import { ITabBarIcon } from './types';
 
@@ -13,8 +13,8 @@ export const BottomNavigation = () => {
     return <Ionicon name="chatbubbles-outline" size={24} color={color} />;
   }, []);
 
-  const profileScreenButton = useCallback((color: string) => {
-    return <Ionicon name="person-outline" size={24} color={color} />;
+  const callScreenButton = useCallback((color: string) => {
+    return <Ionicon name="call-outline" size={24} color={color} />;
   }, []);
 
   return (
@@ -28,17 +28,15 @@ export const BottomNavigation = () => {
         component={MainScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: (options: ITabBarIcon) =>
-            mainScreenButton(options.color, options.focused),
+          tabBarIcon: (options: ITabBarIcon) => mainScreenButton(options.color),
         }}
       />
       <Tab.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
+        name="CallScreen"
+        component={CallScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: (options: ITabBarIcon) =>
-            profileScreenButton(options.color, options.focused),
+          tabBarIcon: (options: ITabBarIcon) => callScreenButton(options.color),
         }}
       />
     </Tab.Navigator>
