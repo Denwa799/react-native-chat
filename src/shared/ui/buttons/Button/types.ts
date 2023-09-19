@@ -5,5 +5,8 @@ export interface IButton {
   margin?: string;
   isDisableSound?: boolean;
   isDisabled?: boolean;
+  isFullWidth?: boolean;
+  isFullHeight?: boolean;
+  isDisabledRadius?: boolean;
   onPress?: () => void;
 }

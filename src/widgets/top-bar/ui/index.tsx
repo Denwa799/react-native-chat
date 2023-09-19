@@ -15,20 +15,12 @@ const IconsBlock = styled.View`
 `;
 
 export const TopBar = () => {
-  const onPress = () => {
-    console.log('onPress');
-  };
-
   return (
     <TopBarStyled>
       <Text isTitle>MessageApp</Text>
       <IconsBlock>
-        <IconButton name="add-outline" onPress={onPress} />
-        <IconButton
-          name="ellipsis-vertical-outline"
-          margin="0 0 0 10px"
-          onPress={onPress}
-        />
+        <IconButton name="add-outline" />
+        <IconButton name="ellipsis-vertical-outline" margin="0 0 0 10px" />
       </IconsBlock>
     </TopBarStyled>
   );

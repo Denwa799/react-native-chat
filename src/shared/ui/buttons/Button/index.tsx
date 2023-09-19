@@ -1,18 +1,16 @@
-import { View } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { useTheme } from '@emotion/react';
-import styled, { css } from '@emotion/native';
+import { css } from '@emotion/native';
 import { IButton } from './types';
-
-const PressableStyle = styled.Pressable`
-  padding: 5px 10px;
-  border-radius: ${props => props.theme.radius.main};
-`;
 
 export const Button = ({
   children,
   margin,
   isDisableSound = true,
   isDisabled = false,
+  isFullWidth = false,
+  isFullHeight = false,
+  isDisabledRadius = false,
   onPress,
 }: IButton) => {
   const theme = useTheme();
@@ -24,16 +22,26 @@ export const Button = ({
   return (
     <View
       style={css`
+        width: ${isFullWidth && '100%'};
+        height: ${isFullHeight && '100%'};
         margin: ${margin};
-        border-radius: ${theme.radius.main};
+        border-radius: ${isDisabledRadius ? 0 : theme.radius.main};
       `}>
-      <PressableStyle
+      <Pressable
         android_ripple={{ color: theme.color.secondary, borderless: true }}
         android_disableSound={isDisableSound}
         disabled={isDisabled}
+        style={css`
+          padding: 5px 10px;
+          display: flex;
+          justify-content: center;
+          border-radius: ${isDisabledRadius ? 0 : theme.radius.main};
+          width: ${isFullWidth && '100%'};
+          height: ${isFullHeight && '100%'};
+        `}
         onPress={onPressHandler}>
         {children}
-      </PressableStyle>
+      </Pressable>
     </View>
   );
 };
