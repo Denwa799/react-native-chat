@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { ThemeProvider } from '@emotion/react';
-import { useTheme } from 'shared/lib/hooks/useTheme';
+import { useAppTheme } from 'shared/lib/hooks/useAppTheme';
 import { AppNavigation } from './navigation';
 
 const lightTheme = {
@@ -13,6 +13,9 @@ const lightTheme = {
   fontSize: {
     title: '24px',
     text: '14px',
+  },
+  size: {
+    main: 24,
   },
   radius: {
     main: '6px',
@@ -30,15 +33,18 @@ const darkTheme = {
     title: '24px',
     text: '14px',
   },
+  size: {
+    main: 24,
+  },
   radius: {
     main: '6px',
   },
 };
 
 export const AppTheme = () => {
-  const { theme } = useTheme();
+  const { appTheme } = useAppTheme();
   const currentTheme = useMemo(() => {
-    switch (theme) {
+    switch (appTheme) {
       case 'light':
         return lightTheme;
       case 'dark':
@@ -46,7 +52,7 @@ export const AppTheme = () => {
       default:
         return lightTheme;
     }
-  }, [theme]);
+  }, [appTheme]);
 
   return (
     <ThemeProvider theme={currentTheme}>

@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useTheme } from '@emotion/react';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { MainScreen } from 'screens/main';
 import { CallScreen } from 'screens/call';
@@ -10,11 +11,21 @@ const Tab = createBottomTabNavigator();
 
 export const BottomNavigation = () => {
   const mainScreenButton = useCallback((color: string) => {
-    return <Ionicon name="chatbubbles-outline" size={24} color={color} />;
+    const theme = useTheme();
+
+    return (
+      <Ionicon
+        name="chatbubbles-outline"
+        size={theme.size.main}
+        color={color}
+      />
+    );
   }, []);
 
   const callScreenButton = useCallback((color: string) => {
-    return <Ionicon name="call-outline" size={24} color={color} />;
+    const theme = useTheme();
+
+    return <Ionicon name="call-outline" size={theme.size.main} color={color} />;
   }, []);
 
   return (

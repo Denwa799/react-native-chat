@@ -12,6 +12,9 @@ declare module '@emotion/react' {
       title: string;
       text: string;
     };
+    size: {
+      main: number;
+    };
     radius: {
       main: string;
     };

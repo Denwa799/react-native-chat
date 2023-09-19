@@ -5,6 +5,6 @@ export interface IThemeProvider {
 }
 
 export interface IThemeContext {
-  theme: string;
+  appTheme: string;
   onSetTheme: (value: string) => void;
 }

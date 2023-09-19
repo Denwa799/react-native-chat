@@ -4,18 +4,18 @@ import { IThemeContext, IThemeProvider } from './types';
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
 export const ThemeProvider: FC<IThemeProvider> = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [appTheme, setAppTheme] = useState('light');
 
   const onSetTheme = useCallback((theme: string) => {
-    setTheme(theme);
+    setAppTheme(theme);
   }, []);
 
   const value = useMemo(
     () => ({
-      theme,
+      appTheme,
       onSetTheme,
     }),
-    [theme],
+    [appTheme],
   );
 
   return (
