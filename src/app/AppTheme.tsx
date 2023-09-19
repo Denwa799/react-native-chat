@@ -20,6 +20,9 @@ const lightTheme = {
   radius: {
     main: '6px',
   },
+  transition: {
+    main: '0.3s',
+  },
 };
 
 const darkTheme = {
@@ -38,6 +41,9 @@ const darkTheme = {
   },
   radius: {
     main: '6px',
+  },
+  transition: {
+    main: '0.3s',
   },
 };
 

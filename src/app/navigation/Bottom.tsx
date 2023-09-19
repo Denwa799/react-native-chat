@@ -1,33 +1,11 @@
-import { useCallback } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTheme } from '@emotion/react';
-import Ionicon from 'react-native-vector-icons/Ionicons';
 import { MainScreen } from 'screens/main';
 import { CallScreen } from 'screens/call';
-
-import { ITabBarIcon } from './types';
+import { BottomButton } from './ui/BottomButton';
 
 const Tab = createBottomTabNavigator();
 
 export const BottomNavigation = () => {
-  const mainScreenButton = useCallback((color: string) => {
-    const theme = useTheme();
-
-    return (
-      <Ionicon
-        name="chatbubbles-outline"
-        size={theme.size.main}
-        color={color}
-      />
-    );
-  }, []);
-
-  const callScreenButton = useCallback((color: string) => {
-    const theme = useTheme();
-
-    return <Ionicon name="call-outline" size={theme.size.main} color={color} />;
-  }, []);
-
   return (
     <Tab.Navigator
       screenOptions={{
@@ -39,7 +17,12 @@ export const BottomNavigation = () => {
         component={MainScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: (options: ITabBarIcon) => mainScreenButton(options.color),
+          tabBarButton: () => (
+            <BottomButton
+              iconName="chatbubbles-outline"
+              routeName="MainScreen"
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -47,7 +30,9 @@ export const BottomNavigation = () => {
         component={CallScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarIcon: (options: ITabBarIcon) => callScreenButton(options.color),
+          tabBarButton: () => (
+            <BottomButton iconName="call-outline" routeName="CallScreen" />
+          ),
         }}
       />
     </Tab.Navigator>

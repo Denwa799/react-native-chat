@@ -18,6 +18,9 @@ declare module '@emotion/react' {
     radius: {
       main: string;
     };
+    transition: {
+      main: string;
+    };
   }
 }
 
