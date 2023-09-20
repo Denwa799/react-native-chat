@@ -5,15 +5,18 @@ declare module '@emotion/react' {
     color: {
       primary: string;
       secondary: string;
+      accent: string;
       background: string;
       text: string;
     };
     fontSize: {
       title: string;
+      subtitle: string;
       text: string;
     };
     size: {
       main: number;
+      small: number;
     };
     radius: {
       main: string;

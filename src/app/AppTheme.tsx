@@ -7,15 +7,18 @@ const lightTheme = {
   color: {
     primary: '#2e9ffb',
     secondary: '#e5e6ea',
+    accent: '#a1a1a1',
     background: '#fff',
     text: '#000',
   },
   fontSize: {
     title: '24px',
+    subtitle: '18px',
     text: '14px',
   },
   size: {
     main: 24,
+    small: 18,
   },
   radius: {
     main: '6px',
@@ -29,15 +32,18 @@ const darkTheme = {
   color: {
     primary: '#2e9ffb',
     secondary: '#e5e6ea',
+    accent: '#a1a1a1',
     background: '#111113',
     text: '#f1f1f1',
   },
   fontSize: {
     title: '24px',
+    subtitle: '18px',
     text: '14px',
   },
   size: {
     main: 24,
+    small: 18,
   },
   radius: {
     main: '6px',
