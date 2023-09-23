@@ -1,4 +1,5 @@
 import styled from '@emotion/native';
+import { ActionBar } from 'features/action-menu';
 import { Text } from 'shared/ui/Text';
 import { IconButton } from 'shared/ui/buttons/IconButton';
 
@@ -20,7 +21,7 @@ export const TopBar = () => {
       <Text isTitle>MessageApp</Text>
       <IconsBlock>
         <IconButton name="add-outline" />
-        <IconButton name="ellipsis-vertical-outline" margin="0 0 0 10px" />
+        <ActionBar />
       </IconsBlock>
     </TopBarStyled>
   );

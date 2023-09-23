@@ -3,6 +3,7 @@ import { Button } from 'shared/ui/buttons/Button';
 import { Avatar } from 'shared/ui/Avatar';
 import { TextContent } from './TextContent';
 import { Time } from './Time';
+import { IChatCard } from './types';
 
 const ChatCardStyled = styled.View`
   position: relative;
@@ -17,22 +18,24 @@ const Content = styled.View`
   flex-direction: row;
 `;
 
-export const ChatCard = () => {
+export const ChatCard = ({
+  id,
+  title,
+  text,
+  avatar,
+  dateString,
+}: IChatCard) => {
   return (
     <ChatCardStyled>
       <Button isFullHeight isFullWidth isDisabledRadius>
         <Content>
           <Avatar
             source={{
-              uri: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+              uri: avatar,
             }}
           />
-          <TextContent
-            title="lorem Lorem ipsum dolor Lorem ipsum dolor"
-            text="Lorem Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor ipsum dolor sit amet consectetur adipisicing elit. Dolorem est
-          vel "
-          />
-          <Time dateString="2021-09-20T18:21:32.854Z" />
+          <TextContent title={title} text={text} />
+          <Time dateString={dateString} />
         </Content>
       </Button>
     </ChatCardStyled>

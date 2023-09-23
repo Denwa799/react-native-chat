@@ -1,5 +1,7 @@
+import { FlatList } from 'react-native';
 import styled from '@emotion/native';
 import { ChatCard } from 'entities/chat-card/ui';
+import { data } from './data';
 
 const View = styled.View`
   margin-top: 10px;
@@ -9,9 +11,18 @@ const View = styled.View`
 export const ChatList = () => {
   return (
     <View>
-      <ChatCard />
-      <ChatCard />
-      <ChatCard />
+      <FlatList
+        data={data}
+        renderItem={({ item }) => (
+          <ChatCard
+            id={item.id}
+            title={item.title}
+            text={item.text}
+            avatar={item.avatar}
+            dateString={item.dateString}
+          />
+        )}
+      />
     </View>
   );
 };
