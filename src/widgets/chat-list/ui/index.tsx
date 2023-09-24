@@ -13,6 +13,7 @@ export const ChatList = () => {
     <View>
       <FlatList
         data={data}
+        keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <ChatCard
             id={item.id}

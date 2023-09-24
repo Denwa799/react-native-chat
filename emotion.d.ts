@@ -24,6 +24,18 @@ declare module '@emotion/react' {
     transition: {
       main: string;
     };
+    shadow: {
+      main: {
+        shadowColor: string;
+        shadowOffset: {
+          width: number;
+          height: number;
+        };
+        shadowOpacity: number;
+        shadowRadius: number;
+        elevation: number;
+      };
+    };
   }
 }
 

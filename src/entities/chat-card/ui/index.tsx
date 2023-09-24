@@ -25,9 +25,13 @@ export const ChatCard = ({
   avatar,
   dateString,
 }: IChatCard) => {
+  const onPress = () => {
+    console.log('chat press');
+  };
+
   return (
     <ChatCardStyled>
-      <Button isFullHeight isFullWidth isDisabledRadius>
+      <Button isFullHeight isFullWidth isDisabledRadius onPress={onPress}>
         <Content>
           <Avatar
             source={{

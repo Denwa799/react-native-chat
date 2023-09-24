@@ -26,6 +26,18 @@ const lightTheme = {
   transition: {
     main: '0.3s',
   },
+  shadow: {
+    main: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.15,
+      shadowRadius: 10,
+      elevation: 3,
+    },
+  },
 };
 
 const darkTheme = {
@@ -50,6 +62,18 @@ const darkTheme = {
   },
   transition: {
     main: '0.3s',
+  },
+  shadow: {
+    main: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.15,
+      shadowRadius: 10,
+      elevation: 3,
+    },
   },
 };
 

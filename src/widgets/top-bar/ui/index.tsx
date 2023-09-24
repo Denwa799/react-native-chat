@@ -18,7 +18,7 @@ const IconsBlock = styled.View`
 export const TopBar = () => {
   return (
     <TopBarStyled>
-      <Text isTitle>MessageApp</Text>
+      <Text type="title">MessageApp</Text>
       <IconsBlock>
         <IconButton name="add-outline" />
         <ActionBar />

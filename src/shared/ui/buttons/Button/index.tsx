@@ -35,7 +35,7 @@ export const Button = ({
           padding: 5px 10px;
           display: flex;
           justify-content: center;
-          border-radius: ${isDisabledRadius ? 0 : theme.radius.main};
+          // border-radius: ${isDisabledRadius ? 0 : theme.radius.main};
           width: ${isFullWidth && '100%'};
           height: ${isFullHeight && '100%'};
         `}
