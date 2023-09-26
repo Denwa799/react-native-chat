@@ -5,20 +5,26 @@ import { ModalCard } from './ModalCard';
 
 export const ActionBar = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isClose, setIsClose] = useState(false);
 
   const onPress = () => {
     setIsVisible(true);
   };
 
   const onClose = () => {
-    setIsVisible(false);
+    setIsClose(true);
+  };
+
+  const onSetVisible = (value: boolean) => {
+    setIsVisible(value);
+    setIsClose(false);
   };
 
   return (
     <>
       <IconButton name="ellipsis-vertical-outline" onPress={onPress} />
       <Modal isVisible={isVisible} onClose={onClose}>
-        <ModalCard />
+        <ModalCard isClose={isClose} onSetVisible={onSetVisible} />
       </Modal>
     </>
   );

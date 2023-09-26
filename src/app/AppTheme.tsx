@@ -9,6 +9,7 @@ const lightTheme = {
     secondary: '#e5e6ea',
     accent: '#a1a1a1',
     background: '#fff',
+    background2: '#f6f6f6',
     text: '#000',
   },
   fontSize: {
@@ -46,6 +47,7 @@ const darkTheme = {
     secondary: '#e5e6ea',
     accent: '#a1a1a1',
     background: '#111113',
+    background2: '#111113',
     text: '#f1f1f1',
   },
   fontSize: {

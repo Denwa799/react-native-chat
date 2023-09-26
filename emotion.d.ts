@@ -7,6 +7,7 @@ declare module '@emotion/react' {
       secondary: string;
       accent: string;
       background: string;
+      background2: string;
       text: string;
     };
     fontSize: {

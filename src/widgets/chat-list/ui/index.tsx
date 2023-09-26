@@ -5,7 +5,6 @@ import { data } from './data';
 
 const View = styled.View`
   margin-top: 10px;
-  padding-left: 10px;
 `;
 
 export const ChatList = () => {
